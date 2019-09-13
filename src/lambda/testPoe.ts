@@ -13,9 +13,12 @@ export const handler: APIGatewayProxyHandler = async (
 ) => {
   try {
     const payloadString = event.body.split("=")[1];
+    console.log('payloadString', payloadString);
+
     const normilizedPayloadString = decodeURI(payloadString)
       .replace(/\+/g, " ")
-      .replace(/%3A/g, ": ");
+      .replace(/%3A/g, ": ")
+      .replace(/%2C/g, ',')
     console.log('normilizedPayloadString', normilizedPayloadString);
 
     const payload: PoePayload = JSON.parse(normilizedPayloadString);
