@@ -7,7 +7,7 @@ import { PoePayload, PoeEventNames, LanguageNames } from "../../types";
 const germanExportHook = "https://api.poeditor.com/webhooks/bf2989f3a8";
 const japaneseExportHook = "https://api.poeditor.com/webhooks/2e9d47ace8";
 
-export const handlePoeTranslationsEvents: APIGatewayProxyHandler = async (
+export const handler: APIGatewayProxyHandler = async (
   event,
   _context
 ) => {
@@ -16,6 +16,8 @@ export const handlePoeTranslationsEvents: APIGatewayProxyHandler = async (
     const normilizedPayloadString = decodeURI(payloadString)
       .replace(/\+/g, " ")
       .replace(/%3A/g, ": ");
+    console.log('normilizedPayloadString', normilizedPayloadString);
+
     const payload: PoePayload = JSON.parse(normilizedPayloadString);
     const { name } = payload.event;
     console.log("parsed payload", payload);
