@@ -1,0 +1,31 @@
+{
+  "name": "netlify-poe-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lambda:serve": "netlify-lambda serve src/lambda",
+    "lambda:build": "netlify-lambda build src/lambda"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Macstyg/Netlify_POE_functions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Macstyg/Netlify_POE_functions/issues"
+  },
+  "homepage": "https://github.com/Macstyg/Netlify_POE_functions#readme",
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.31",
+    "@types/node": "^12.7.5",
+    "axios": "^0.19.0",
+    "netlify-lambda": "^1.6.3",
+    "typescript": "^3.6.3"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.6.0"
+  }
+}
